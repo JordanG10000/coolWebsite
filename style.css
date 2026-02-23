@@ -28,6 +28,7 @@ body {
     font-size: 18px;
     padding: 5px;
     background-color: white;
+    transition: width 1s ease;
 }
 
 .searchBar:focus {
