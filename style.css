@@ -1,0 +1,59 @@
+h1 {
+   font-size: 100px;
+   color: rgb(265,265,265);
+}
+
+h1:hover {
+    color: black;
+    cursor: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 50vh;
+    background-color: rgb(0,0,0);
+}
+
+.search {
+    position: relative;
+    height: minmax(75px, 200px);
+}
+
+.searchBar {
+    border: 0;
+    font-size: 18px;
+    padding: 5px;
+    background-color: white;
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+.btn {
+    background-color: white;
+    border: 0;
+    font-size: 18px;
+    height: minmax(75px, 200px);
+    width: minmax(75px, 200px);
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.search.active .input {
+    width: 200px;
+}
+
+.search.active .btn {
+    transform: translateX(200px);
+}
