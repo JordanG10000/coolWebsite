@@ -3,6 +3,16 @@
     height: 90vh;
 }
 
+.panel {
+    align-items: center;
+}
+
+.panel > h3 {
+    color: white;
+    -webkit-text-stroke: black solid 5px;
+
+}
+
 .flex {
     display: flex;
 }
