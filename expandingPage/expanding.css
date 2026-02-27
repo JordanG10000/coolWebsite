@@ -22,7 +22,7 @@ body {
     transition: width ease 0.1s;
 }
 
-.panel:hover {
+.unselected:hover {
     cursor: pointer;
     width: 12vw;
 }
@@ -40,7 +40,7 @@ body {
 }
 
 .selected:hover {
-    border: black;
+    border: black solid 5px;
 }
 
 .flex {
