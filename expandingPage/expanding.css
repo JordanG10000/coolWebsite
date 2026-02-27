@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
     width: 10vw;
     height: 80%;
+    border-radius: 10px;
     transition: width ease 0.1s;
 }
 
@@ -36,11 +37,7 @@ body {
 
 .selected {
     width: 40vw;
-    transition: all 0.1s
-}
-
-.selected:hover {
-    border: ;
+    transition: all 0.3s
 }
 
 .flex {
