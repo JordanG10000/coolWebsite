@@ -16,6 +16,7 @@ body {
 
 .panel {
     align-items: center;
+    justify-content: center;
     background-repeat: no-repeat;
     width: 10vw;
     height: 80%;
@@ -37,6 +38,7 @@ body {
 
 .selected {
     width: 40vw;
+    background-size: cover;
     transition: all 0.3s
 }
 
