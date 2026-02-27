@@ -5,12 +5,18 @@
 
 .panel {
     align-items: center;
+    image-repeat: no-repeat;
 }
 
 .panel > h3 {
     color: white;
-    -webkit-text-stroke: black solid 5px;
+    -webkit-text-stroke: black 0.5px;
+    font-size: 1.5rem;
 
+}
+
+.selected {
+    width: 40vw;
 }
 
 .flex {
