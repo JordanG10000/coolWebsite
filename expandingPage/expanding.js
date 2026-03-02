@@ -1,4 +1,4 @@
-const panels = querySelector(".panel");
+const panels = document.querySelector(".panel");
 
 panels.addEventListener("click", (event) => {
     for (panel of panels) {
