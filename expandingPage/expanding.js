@@ -1,3 +1,7 @@
-const panel = querySelector(".panel");
+const panels = querySelector(".panel");
 
-panel.addeventListener
+panels.addEventListener("click", () => {
+    for (panel of panels) {
+        panel.classList.remove("selected");
+    }
+})
