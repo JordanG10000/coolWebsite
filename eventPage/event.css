@@ -1,15 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
 .rectangle {
     height: 60px;
     width: 100px;
     margin: 5px;
     content: "";
     background: red;
-    position: relative;
 }
 
-h3 {
-    display: flex;
-    position: absolute;
-    align-self: center;
-    justify-self: center;
+ {
+
 }
