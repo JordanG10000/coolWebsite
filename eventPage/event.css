@@ -1,6 +1,7 @@
 .rectangle {
     height: 20px;
     width: 50px;
+    margin: 5px;
     content: "";
     background: black;
 }
