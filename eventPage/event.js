@@ -1,7 +1,6 @@
 const clickBox = document.querySelector(".click");
 const spinBox = document.querySelector(".spin");
 
-console.log(Math.floor(Math.random()*255));
 
 clickBox.addEventListener("click", (e) => {
     e.target.style.background = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`
