@@ -2,6 +2,7 @@ const clickBox = document.querySelector(".click");
 const spinBox = document.querySelector(".spin");
 const moveBox = document.querySelector(".move");
 const hoverBox = document.querySelector(".hover");
+const dblBox = document.querySelector(".dblClick");
 
 
 clickBox.addEventListener("click", (e) => {
@@ -67,4 +68,9 @@ hoverBox.addEventListener("mouseenter", () => {
 hoverBox.addEventListener("mouseleave", () => {
     hoverBox.style.width = '200px';
     hoverBox.style.height = '100px';
+})
+
+
+dblBox.addEventListener("dblclick", () => {
+    
 })
