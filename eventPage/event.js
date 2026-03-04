@@ -1,7 +1,7 @@
 const clickBox = document.querySelector(".click");
 const spinBox = document.querySelector(".spin");
 const moveBox = document.querySelector(".move");
-const hoverbox = document.querySelector(".hover");
+const hoverBox = document.querySelector(".hover");
 
 
 clickBox.addEventListener("click", (e) => {
@@ -60,7 +60,6 @@ document.addEventListener("keydown", (event) => {
 })
 
 hoverBox.addEventListener("mouseEnter", () => {
-    while (true) {
         hoverBox.style.width = `5px`;
     }
 })
