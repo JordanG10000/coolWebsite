@@ -60,11 +60,11 @@ document.addEventListener("keydown", (event) => {
 })
 
 hoverBox.addEventListener("mouseenter", () => {
-    hoverBox.style.width = '120px';
+    hoverBox.style.width = '140px';
     hoverBox.style.height = '70px';
 })
 
 hoverBox.addEventListener("mouseleave", () => {
-    hoverBox.style.width = '150px';
+    hoverBox.style.width = '200px';
     hoverBox.style.height = '100px';
 })
