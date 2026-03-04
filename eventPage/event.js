@@ -8,7 +8,7 @@ clickBox.addEventListener("click", (e) => {
 })
 
 spinBox.addEventListener("click", (e) => {
-
+    spin
 })
 
 let y = 0;
