@@ -17,11 +17,11 @@ document.addEventListener("keydown", (event) => {
 
   if (event.key == "ArrowUp") {
         y -= 10;
-        moveBox.style.transform = `translate(${x}, ${y}px)`;
+        moveBox.style.transform = `translate(${x}px, ${y}px)`;
   }
   else if (event.key == "ArrowDown") {
         y += 10;
-        moveBox.style.transform = `translate(${x}, ${y}px)`;
+        moveBox.style.transform = `translate(${x}px, ${y}px)`;
   }
   else if (event.key == "ArrowRight") {
         x += 10;
