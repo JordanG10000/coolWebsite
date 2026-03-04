@@ -18,22 +18,41 @@ spinBox.addEventListener("click", (e) => {
 
 let y = 0;
 let x = 0;
+let upAccel = 0;
+let downAccel = 0;
+let leftAccel = 0;
+let rightAccel = 0;
 document.addEventListener("keydown", (event) => {
 
   if (event.key == "ArrowUp") {
-        y -= 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`;
+        upAccel++;
+        downAccel = 0;
+        leftAccel = 0;
+        rightAccel = 0;
+        y -= 10 + upAccel;
   }
   else if (event.key == "ArrowDown") {
-        y += 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`;
+        upAccel = 0;
+        downAccel++;
+        leftAccel = 0;
+        rightAccel = 0;
+        y += (10 + downAccel);
   }
   else if (event.key == "ArrowRight") {
+        upAccel = 0;
+        downAccel = 0;
+        leftAccel = 0;
+        rightAccel++;
         x += 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`;
   }
   else if (event.key == "ArrowLeft") {
+        upAccel = 0;
+        downAccel = 0;
+        leftAccel++;
+        rightAccel = 0;
         x -= 10;
-        moveBox.style.transform = `translate(${x}px, ${y}px)`;
   }
+
+  moveBox.style.transform = `translate(${x}px, ${y}px)`;
+
 })
