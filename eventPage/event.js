@@ -26,7 +26,7 @@ document.addEventListener("keydown", (event) => {
 
   }
   else if (event.key == "ArrowLeft") {
-        moveBox.style.transform = `translateX(${x-10}px)`;
+        moveBox.style.transform = `translate(${x-10}px)`;
 
   }
 })
