@@ -60,8 +60,8 @@ document.addEventListener("keydown", (event) => {
 })
 
 hoverBox.addEventListener("mouseenter", () => {
-    hoverBox.style.width = '140px';
-    hoverBox.style.height = '70px';
+    hoverBox.style.width = `${Math.floor(Math.random()*140)}px`;
+    hoverBox.style.height = `${Math.floor(Math.random()*70)}px`;
 })
 
 hoverBox.addEventListener("mouseleave", () => {
