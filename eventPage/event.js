@@ -8,7 +8,12 @@ clickBox.addEventListener("click", (e) => {
 })
 
 spinBox.addEventListener("click", (e) => {
-    spin
+    if (spinBox.style.animationPlayState === "paused") {
+        spinBox.style.animationPlayState = "running"
+    }
+    else {
+        spinBox.style.animationPlayState = "paused";
+    }
 })
 
 let y = 0;
