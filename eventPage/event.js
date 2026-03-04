@@ -60,8 +60,7 @@ document.addEventListener("keydown", (event) => {
 })
 
 hoverBox.addEventListener("mouseEnter", () => {
-        hoverBox.style.width = `5px`;
-    }
+    hoverBox.style.width = `5px`;
 })
 
 hoverBox.addEventListener("mouseLeave", () => {
