@@ -59,10 +59,12 @@ document.addEventListener("keydown", (event) => {
 
 })
 
-hoverBox.addEventListener("mouseEnter", () => {
-    hoverBox.style.width = `5px`;
+hoverBox.addEventListener("mouseenter", () => {
+    hoverBox.style.width = '120px';
+    hoverBox.style.height = '70px';
 })
 
-hoverBox.addEventListener("mouseLeave", () => {
-
+hoverBox.addEventListener("mouseleave", () => {
+    hoverBox.style.width = '150px';
+    hoverBox.style.height = '100px';
 })
