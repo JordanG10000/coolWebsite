@@ -1,6 +1,7 @@
 const clickBox = document.querySelector(".click");
 const spinBox = document.querySelector(".spin");
 const moveBox = document.querySelector(".move");
+const hoverbox = document.querySelector(".hover");
 
 
 clickBox.addEventListener("click", (e) => {
@@ -24,7 +25,7 @@ let downAccel = 0;
 let leftAccel = 0;
 let rightAccel = 0;
 document.addEventListener("keydown", (event) => {
-
+    console.log(event.key);
   if (event.key == "ArrowUp") {
         upAccel++;
         downAccel = 0;
@@ -55,5 +56,15 @@ document.addEventListener("keydown", (event) => {
   }
 
   moveBox.style.transform = `translate(${x}px, ${y}px)`;
+
+})
+
+hoverBox.addEventListener("mouseEnter", () => {
+    while (true) {
+        hoverBox.style.width = `5px`;
+    }
+})
+
+hoverBox.addEventListener("mouseLeave", () => {
 
 })
