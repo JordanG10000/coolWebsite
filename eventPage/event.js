@@ -1,5 +1,6 @@
 const clickBox = document.querySelector(".click");
 const spinBox = document.querySelector(".spin");
+const moveBox = document.querySelector(".move");
 
 
 clickBox.addEventListener("click", (e) => {
@@ -12,4 +13,7 @@ spinBox.addEventListener("click", (e) => {
 
 document.addEventListener("keydown", (event) => {
     console.log(event.key);
+  //  if (event.key == 'ArrowUp') {
+        moveBox.style.transform = "translateY(10px)";
+  //  }
 })
