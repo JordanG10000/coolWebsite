@@ -31,11 +31,9 @@ document.addEventListener("keydown", (event) => {
   else if (event.key == "ArrowRight") {
         x += 10;
         moveBox.style.transform = `translate(${x}px, ${y}px)`;
-
   }
   else if (event.key == "ArrowLeft") {
         x -= 10;
         moveBox.style.transform = `translate(${x}px, ${y}px)`;
-
   }
 })
