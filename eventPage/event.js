@@ -2,7 +2,7 @@ const clickBox = document.querySelector(".click");
 const spinBox = document.querySelector(".spin");
 const moveBox = document.querySelector(".move");
 const hoverBox = document.querySelector(".hover");
-const dblBox = document.querySelector(".dblClick");
+const dblBox = document.querySelector(".dblclick");
 
 
 clickBox.addEventListener("click", (e) => {
@@ -25,6 +25,7 @@ let upAccel = 0;
 let downAccel = 0;
 let leftAccel = 0;
 let rightAccel = 0;
+
 document.addEventListener("keydown", (event) => {
     console.log(event.key);
   if (event.key == "ArrowUp") {
@@ -56,6 +57,7 @@ document.addEventListener("keydown", (event) => {
         x -= (speed + leftAccel);
   }
 
+  console.log(rightAccel);
   moveBox.style.transform = `translate(${x}px, ${y}px)`;
 
 })
@@ -72,5 +74,10 @@ hoverBox.addEventListener("mouseleave", () => {
 
 
 dblBox.addEventListener("dblclick", () => {
-    
+    window.open("event.html");
+
+    function closeTab() {
+        window.close();
+    }
+    setInterval(closeTab, 1000);
 })
