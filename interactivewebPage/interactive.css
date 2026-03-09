@@ -31,6 +31,10 @@ button {
     filter: drop-shadow(30px 50px 30px 30px black)
 }
 
+button:active {
+    background-color: rgb(200,200,200);
+}
+
 button:hover {
     cursor: pointer;
 }
