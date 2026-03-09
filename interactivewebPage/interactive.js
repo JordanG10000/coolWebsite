@@ -7,7 +7,7 @@ const generateBtn = document.querySelector(".generateBtn");
 let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Huesca", "Austin", "Bowling", "Williams"];
 let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 
-generateBtn.addEventListener(() => {
+generateBtn.addEventListener( (e) => {
     let text = "";
     let quoteLength = (Math.floor(Math.random() * words.length));
     for (let i = 0; i < quoteLength; i++)
