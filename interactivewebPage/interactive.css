@@ -1,5 +1,36 @@
 body {
     display: flex;
-    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
+    background-color: grey;
+}
+
+h1 {
+    font-size: 70px;
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+
+.quotesection {
+    background-color: white;
+    width: 40vw;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+button {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    height: 75px;
+    width: 250px;
+    border-radius: 20px;
+    filter: drop-shadow(30px 50px 30px 30px black)
+}
+
+button:hover {
+    cursor: pointer;
 }
