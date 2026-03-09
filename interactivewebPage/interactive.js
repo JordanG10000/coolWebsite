@@ -7,6 +7,9 @@ const generateBtn = document.querySelector(".generateBtn");
 let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Huesca", "Austin", "Bowling", "Williams"];
 let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 
+generateBtn.addEventListener(() => {
+    let quoteLength = (Math.random() * words.length);
+})
 
 // take the list of words and get a random number to represnet how many words will be added into quote
 
