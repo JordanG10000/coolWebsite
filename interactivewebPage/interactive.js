@@ -8,7 +8,12 @@ let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Huesca", "A
 let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 
 generateBtn.addEventListener(() => {
-    let quoteLength = (Math.random() * words.length);
+    let text = "";
+    let quoteLength = (Math.floor(Math.random() * words.length));
+    for (let i = 0; i < quoteLength; i++)
+    {
+        let text += `${words[Math.random() * words.length]}`
+    }
 })
 
 // take the list of words and get a random number to represnet how many words will be added into quote
