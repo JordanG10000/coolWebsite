@@ -7,13 +7,16 @@ const generateBtn = document.querySelector(".generateBtn");
 let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Huesca", "Austin", "Bowling", "Williams"];
 let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 
-generateBtn.addEventListener( (e) => {
-    let text = "";
+let text = "";
+generateBtn.addEventListener("click", () => {
+    text = "";
     let quoteLength = (Math.floor(Math.random() * words.length));
+    console.log(text);
     for (let i = 0; i < quoteLength; i++)
     {
-        let randomWord = `${words[Math.random() * words.length]}`
-        let text = text + randomWord;
+        let randomWord = `${words[Math.floor(Math.random() * words.length)]}`
+        text = text + randomWord;
+        console.log(randomWord);
     }
     quoteText.content = text;
 })
