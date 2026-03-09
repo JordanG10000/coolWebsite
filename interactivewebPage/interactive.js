@@ -18,7 +18,7 @@ generateBtn.addEventListener("click", () => {
         text = text + randomWord;
         console.log(randomWord);
     }
-    quoteText.content = text;
+    quoteText.style.content = text;
 })
 
 // take the list of words and get a random number to represnet how many words will be added into quote
