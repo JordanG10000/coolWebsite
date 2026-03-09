@@ -12,8 +12,10 @@ generateBtn.addEventListener(() => {
     let quoteLength = (Math.floor(Math.random() * words.length));
     for (let i = 0; i < quoteLength; i++)
     {
-        let text += `${words[Math.random() * words.length]}`
+        let randomWord = `${words[Math.random() * words.length]}`
+        let text = text + randomWord;
     }
+    quoteText.content = text;
 })
 
 // take the list of words and get a random number to represnet how many words will be added into quote
