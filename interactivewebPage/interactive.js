@@ -5,7 +5,7 @@ const generateBtn = document.querySelector(".generateBtn");
 
 // Random list of words and a random list of first and last names
 
-let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Jordan", "Huesca", "Austin", "Bowling", "Williams"];
+let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Jordan", "Huesca", "Austin", "Bowling", "Williams", "Goodall"];
 let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 let punctuation = [".", "!", "?", "...",];
 
