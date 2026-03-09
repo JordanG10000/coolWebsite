@@ -1,6 +1,6 @@
 // Random list of words and a random list of first and last names
 
-let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Smith", ""];
+let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Smith", "Austin", "Bowling", "];
 
 // take the list of words and get a random number to represnet how many words will be added into quote
 
