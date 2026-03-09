@@ -11,10 +11,13 @@ let punctuation = [".", "!", "?", "...",];
 
 generateBtn.addEventListener("click", () => {
     let text = "";
+    // Gets length of quote being generated
     let quoteLength = (Math.floor(Math.random() * words.length));
     for (let i = 0; i < quoteLength; i++)
     {
+        // Gets as many words as the length of the quote
         let randomWord = `${words[Math.floor(Math.random() * words.length)]}`
+        // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
             text += randomWord;
         }
@@ -23,18 +26,14 @@ generateBtn.addEventListener("click", () => {
         }
     }
     let author = "-";
+    // grabs 2 names for the author from the name list
     for (let i = 0; i < 2; i++) {
         let randomName = names[Math.floor(Math.random() * names.length)];
         author += ` ${randomName}`;
     }
+    // Places generated text into the html to display it to the user.
     let rndmPunctuation = punctuation[Math.floor(Math.random() * punctuation.length)];
     lengthIndicator.innerText = `Quote Length: ${quoteLength}`;
     quoteText.innerText = text + rndmPunctuation;
     authorText.innerText = author;
 })
-
-// take the list of words and get a random number to represnet how many words will be added into quote
-
-// take 2 names from name list and use as the author
-
-// run when user clicks the button
