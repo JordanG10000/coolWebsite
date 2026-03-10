@@ -38,3 +38,35 @@ button:active {
 button:hover {
     cursor: pointer;
 }
+
+.switch {
+    display: flex;
+    margin-top: 10px;
+    width: 160px;
+    height: 50px;
+    background-color: rgb(69, 73, 77);
+    border: 2px black solid;
+    border-radius: 3px;
+    padding: 0 10px 0;
+    justify-content: space-between;
+    position: relative;
+
+    & p {
+        color: white;
+    }
+
+    & .slider {
+        content: "";
+        width: 90px;
+        height: 50px;
+        background-color: darkgrey;
+        position: absolute;
+        right: 0;
+        transition: all ease 0.4s;
+    }
+
+}
+
+.complex {
+    transform: translate(-90px, 0);
+}
