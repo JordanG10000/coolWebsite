@@ -16,4 +16,10 @@ body {
     background-color: rgb(40, 37, 39);
     color: white;
     margin: 1rem;
+    padding: 1.5rem 3rem;
+    border-radius: 15px;
+    filter: drop-shadow(30 50 5)
+    &:active {
+        background-color: rgb(15, 22, 24)
+    }
 }
