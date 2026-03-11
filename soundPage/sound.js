@@ -1,5 +1,5 @@
 const buttons = document.querySelector(".buttons");
-const sounds = document.querySelector("audio");
+const sounds = document.querySelectorAll("audio");
 
 for (let i = 0; i < sounds.length; i++) {
     btn = document.createElement("button");
