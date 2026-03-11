@@ -7,7 +7,6 @@ for (let i = 0; i < sounds.length; i++) {
     btn.innerText = "Click Me";
 
     btn.addEventListener("click", () => {
-        btn.classList.toggle("active");
         sounds[i].play();
     })
 
