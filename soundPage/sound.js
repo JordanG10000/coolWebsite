@@ -14,7 +14,7 @@ for (let sound of sounds) {
         else {
             sound.play();
         }
-        btn.classList.toggle("active");
+        setInterval(function sound.duration * 1000, btn.classList.toggle("active"))
     })
 
     buttons.appendChild(btn);
