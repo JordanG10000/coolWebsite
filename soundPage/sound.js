@@ -11,9 +11,7 @@ for (let sound of sounds) {
 
 
     btn.addEventListener("click", () => {
-        let togge = setInterval(() => {
-            btn.classList.toggle("active")
-        }, sound.duration * 1000)
+
 
         if (!sound.paused) {
             btn.classList.toggle("active");
@@ -24,6 +22,9 @@ for (let sound of sounds) {
             sound.play();
             btn.classList.toggle("active")
         }
+        let togge = setInterval(() => {
+            btn.classList.toggle("active")
+        }, sound.duration * 1000)
         clearInterval(togge);
     })
 
