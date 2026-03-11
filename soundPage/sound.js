@@ -4,7 +4,7 @@ const sounds = document.querySelectorAll("audio");
 for (let i = 0; i < sounds.length; i++) {
     btn = document.createElement("button");
     btn.classList.add("btn");
-    btn.innerText = `${sounds[i].id}`;
+    btn.innerText = `${sounds[i].id.toUpperCase()}`;
 
     btn.addEventListener("click", () => {
         sounds[i].play();
