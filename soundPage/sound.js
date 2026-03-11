@@ -8,6 +8,7 @@ for (let i = 0; i < sounds.length; i++) {
 
     btn.addEventListener("click", () => {
         btn.classList.toggle("active");
+        sounds[i].play();
     })
 
     buttons.appendChild(btn);
