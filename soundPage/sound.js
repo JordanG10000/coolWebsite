@@ -14,6 +14,7 @@ for (let sound of sounds) {
         else {
             sound.play();
         }
+        btn.classList.toggle("active");
     })
 
     buttons.appendChild(btn);

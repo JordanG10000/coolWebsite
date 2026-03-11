@@ -36,3 +36,9 @@ body {
     }
 }
 
+.active {
+    background-color: rgb(255, 0, 0);
+    &:active {
+        background-color: rgb(155, 0, 0);
+    }
+}
