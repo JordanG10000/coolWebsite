@@ -4,6 +4,7 @@ const authorText = document.querySelector(".author");
 const generateBtn = document.querySelector(".generateBtn");
 const trigger = document.querySelector(".switch");
 const slider = document.querySelector(".slider");
+let maxSentences = 5;
 
 // Random list of words and a random list of first and last names
 
@@ -13,8 +14,21 @@ trigger.addEventListener("click", () => {
 
 let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Jordan", "Huesca", "Austin", "Bowling", "Williams", "Goodall"];
 let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
-let nouns = [];
-let verbs = [];
+let nouns = [
+    "time", "person", "year", "way", "day", "thing", "man", "world", "life", "hand",
+    "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government",
+    "company", "number", "group", "problem", "fact", "Jake Faridoni"
+];
+let verbs = [
+    "be", "have", "do", "say", "get", "make", "go", "know", "take", "see",
+    "come", "think", "look", "want", "give", "use", "find", "tell", "ask", "work",
+    "seem", "feel", "try", "leave", "call"
+];
+let conjunctions = [
+    "and", "that", "but", "or", "as", "if", "when", "than", "because", "while",
+    "where", "after", "so", "though", "since", "until", "whether", "before", "although", "nor",
+    "like", "once", "unless", "now", "except"
+];
 
 let punctuation = [".", "!", "?", "...",];
 
@@ -29,7 +43,28 @@ generateBtn.addEventListener("click", () => {
 })
 
 function complexQuote() {
+    let text = "";
+    let sentences = (Math.floor(Math.random() * maxSentences + 1));
+    for (let i = 0; i < sentences; i++)
+    {
+        // Format: "Conjunction -> Noun -> Verb -> Noun"
+        let randomConjunction = `${conjunctions[Math.floor(Math.random() * conjunctions.length)]}`;
+        let randomNoun = `${nouns[Math.floor(Math.random() * nouns.length)]}`;
+        let randomNoun2 = `${nouns[Math.floor(Math.random() * nouns.length)]}`;
+        let randomVerb = `${verbs[Math.floor(Math.random() * verbs.length)]}`;
+        let rndmPunctuation = punctuation[Math.floor(Math.random() * punctuation.length)];
 
+        upperConjunction = randomConjunction.charAt(0).toUpperCase() + randomConjunction.slice(1);
+        // ensures there isnt a space at the start of the quote, otherwise adds spaces
+        if (i == 0) {
+            text += `${upperConjunction} ${randomNoun} ${randomVerb} ${randomNoun2 + rndmPunctuation}`;
+        }
+        else {
+            text += `  ${upperConjunction} ${randomNoun} ${randomVerb} ${randomNoun2 + rndmPunctuation}`;
+        }
+    }
+    lengthIndicator.innerText = `Quote Sentences: ${sentences}`;
+    quoteText.innerText = text;
 }
 
 function simpleQuote() {
