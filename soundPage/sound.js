@@ -1,18 +1,18 @@
 const buttons = document.querySelector(".buttons");
 const sounds = document.querySelectorAll("audio");
 
-for (let i = 0; i < sounds.length; i++) {
+for (let sound of sounds) {
     btn = document.createElement("button");
     btn.classList.add("btn");
-    btn.innerText = `${sounds[i].id.toUpperCase()}`;
+    btn.innerText = `${sound.id.toUpperCase()}`;
 
     btn.addEventListener("click", () => {
-        if (!sounds[i].paused) {
-            sounds[i].pause()
-            sounds[i].currentTime = 0;
+        if (!sound.paused) {
+            sound.pause()
+            sound.currentTime = 0;
         }
         else {
-            sounds[i].play();
+            sound.play();
         }
     })
 
