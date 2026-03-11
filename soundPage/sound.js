@@ -7,7 +7,13 @@ for (let i = 0; i < sounds.length; i++) {
     btn.innerText = `${sounds[i].id.toUpperCase()}`;
 
     btn.addEventListener("click", () => {
-        sounds[i].play();
+        if (!sounds[i].paused) {
+            sounds[i].pause()
+            sounds[i].currentTime = 0;
+        }
+        else {
+            sounds[i].play();
+        }
     })
 
     buttons.appendChild(btn);
