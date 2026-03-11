@@ -29,3 +29,8 @@ body {
         opacity: 0.9;
     }
 }
+
+.active {
+    background-color: red;
+}
+
