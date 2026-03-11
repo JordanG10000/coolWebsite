@@ -14,18 +14,12 @@ for (let sound of sounds) {
 
 
         if (!sound.paused) {
-            btn.classList.toggle("active");
             sound.pause()
             sound.currentTime = 0;
         }
         else {
             sound.play();
-            btn.classList.toggle("active")
         }
-        let togge = setInterval(() => {
-            btn.classList.toggle("active")
-        }, sound.duration * 1000)
-        clearInterval(togge);
     })
 
     buttons.appendChild(btn);
