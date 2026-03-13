@@ -9,4 +9,4 @@ function createMessage() {
     window.open("scary.html");
 }
 
-setInterval(createMessage(), 5000)
+setInterval(createMessage(), 50000)

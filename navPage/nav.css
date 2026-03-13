@@ -1,9 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    font-family: 'Open Sans', sans-serif;
     background: #333333;
     color: #222222;
+    padding-bottom: 50px;
 }
 
 .container {
+    max-width: 1200px;
     background: #fafafa;
     width: 100vw;
     min-height: 100vh;
