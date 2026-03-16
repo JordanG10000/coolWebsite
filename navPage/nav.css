@@ -37,4 +37,8 @@ body {
         align-items: center;
         justify-content: center;
     }
+
+    & a {
+        color: #FFFFFF;
+    }
 }
