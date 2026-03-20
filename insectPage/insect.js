@@ -16,6 +16,8 @@ const createInsect = (src, alt) => {
     insect.style.left = `${x}px`;
     insect.addEventListener("click", () => {
         insect.classList.add("caught")
+        settimeout( ( => insect.remove(), 2000))
+        addInsects()
     })
     gameContainer.append(insect);
 }
@@ -43,7 +45,8 @@ for (let btn of insectBtns) {
 function randomLocation() {
     let width = window.innerWidth;
     let height = window.innerHeight;
-    let x = Math.random() * width - 100;
-    let y = Math.random() * height - 100;
+    let x = Math.random() * (width - 200) + 100;
+    let y = Math.random() * (height - 200) +100;
     return {x, y}
 }
+
