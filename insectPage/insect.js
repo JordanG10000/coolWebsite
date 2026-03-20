@@ -11,6 +11,9 @@ const createInsect = (src, alt) => {
     insect.src = src;
     insect.alt = alt;
     insect.style = `transform: rotate(${Math.random() * 360}deg)`;
+    {x,y} = randomLocation()
+    insect.style.top = `${y}px`;
+    insect.style.left = `${x}px`;
     insect.addEventListener("click", () => {
         insect.classList.add("caught")
     })
@@ -37,3 +40,10 @@ for (let btn of insectBtns) {
     })
 }
 
+function randomLocation() {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let x = Math.random() * width - 100;
+    let y = Math.random() * height;
+    return {x,y}
+}
