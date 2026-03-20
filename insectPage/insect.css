@@ -101,12 +101,15 @@ h1 {
     text-align: center;
     opacity: 0%;
 }
-#game-container img {
+.insect {
     width: 100px;
     height: 100px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+.insect.caught {
+    transform: scale(0);
 }

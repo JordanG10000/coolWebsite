@@ -8,8 +8,12 @@ let alt;
 
 const createInsect = () => {
     let insect = document.createElement("img");
+    insect.classList.add("insect");
     insect.src = src;
     insect.alt = alt;
+    insect.addEventListener("click", () => {
+        
+    })
     gameContainer.append(insect);
 }
 
