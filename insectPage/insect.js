@@ -11,7 +11,7 @@ const createInsect = (src, alt) => {
     insect.src = src;
     insect.alt = alt;
     insect.addEventListener("click", () => {
-
+        insect.classList.add("caught")
     })
     gameContainer.append(insect);
 }
