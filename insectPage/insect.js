@@ -10,6 +10,7 @@ const createInsect = (src, alt) => {
     insect.classList.add("insect");
     insect.src = src;
     insect.alt = alt;
+    insect.style = `transform: rotate(${Math.random() * 360}deg)`;
     insect.addEventListener("click", () => {
         insect.classList.add("caught")
     })
