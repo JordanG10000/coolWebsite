@@ -2,23 +2,22 @@ const screens = document.querySelectorAll(".screen");
 const insectBtns = document.querySelectorAll(".chooseInsectBtn");
 const startBtn = document.getElementById("start-btn");
 const gameContainer = document.getElementById("game-container");
-let src;
-let alt;
 
 
-const createInsect = () => {
+
+const createInsect = (src, alt) => {
     let insect = document.createElement("img");
     insect.classList.add("insect");
     insect.src = src;
     insect.alt = alt;
     insect.addEventListener("click", () => {
-        
+
     })
     gameContainer.append(insect);
 }
 
-const game = () => {
-    setTimeout(createInsect, 1000);
+const game = (src, alt) => {
+    setTimeout(createInsect(src, alt), 1000);
 }
 
 startBtn.addEventListener('click', () => {
@@ -33,7 +32,7 @@ for (let btn of insectBtns) {
         let img = btn.querySelector("img");
         src = img.getAttribute("src");
         alt = img.getAttribute("alt");
-        game();
+        game(src, alt);
     })
 }
 
