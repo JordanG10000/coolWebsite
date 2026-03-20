@@ -10,7 +10,7 @@ const createInsect = (src, alt) => {
     insect.classList.add("insect");
     insect.src = src;
     insect.alt = alt;
-    insect.style = `transform: rotate(${Math.random() * 360}deg)`;
+    insect.style.transform = `rotate(${Math.random() * 360}deg)`;
     let {x,y} = randomLocation()
     insect.style.top = `${y}px`;
     insect.style.left = `${x}px`;
