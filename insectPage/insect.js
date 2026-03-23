@@ -59,3 +59,7 @@ function increaseScore() {
     score++;
     scoreCount.innerText = `Score: ${score}`
 }
+
+function timer() {
+
+}
