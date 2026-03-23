@@ -8,10 +8,11 @@ let score = 0;
 let seconds = 0;
 
 const createInsect = (src, alt) => {
-    let insect = document.createElement("img");
+    let insect = document.createElement("div");
+    let img = document.createElement("img")
     insect.classList.add("insect");
-    insect.src = src;
-    insect.alt = alt;
+    img.src = src;
+    img.alt = alt;
     insect.style.transform = `rotate(${Math.random() * 360}deg)`;
     let { x, y } = randomLocation()
     insect.style.top = `${y}px`;
@@ -21,6 +22,7 @@ const createInsect = (src, alt) => {
         createInsect(src, alt)
     })
     gameContainer.append(insect);
+    insect.append(img);
 }
 
 const game = (src, alt) => {
