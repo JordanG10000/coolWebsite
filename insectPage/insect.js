@@ -3,8 +3,9 @@ const insectBtns = document.querySelectorAll(".chooseInsectBtn");
 const startBtn = document.getElementById("start-btn");
 const gameContainer = document.getElementById("game-container");
 const scoreCount = document.getElementById("score");
+const timer = document.getElementById("time");
 let score = 0;
-
+let seconds = 0;
 
 const createInsect = (src, alt) => {
     let insect = document.createElement("img");
@@ -23,6 +24,7 @@ const createInsect = (src, alt) => {
 
 const game = (src, alt) => {
     setTimeout(createInsect(src, alt), 1000);
+    setInterval(updateTimer(), 1000);
 }
 
 startBtn.addEventListener('click', () => {
@@ -60,6 +62,8 @@ function increaseScore() {
     scoreCount.innerText = `Score: ${score}`
 }
 
-function timer() {
-
+function updateTimer() {
+    seconds++
+    console.log(seconds)
+    timer.innerText = `Time: ${Math.floor(seconds % 60)}:${Math.floor(seconds/60)}`
 }
