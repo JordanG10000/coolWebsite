@@ -17,6 +17,7 @@ const createInsect = (src, alt) => {
     let { x, y } = randomLocation()
     insect.style.top = `${y}px`;
     insect.style.left = `${x}px`;
+    insect.style.background = "red";
     insect.addEventListener("click", (e) => {
         catchInsect(e.target);
         createInsect(src, alt)
