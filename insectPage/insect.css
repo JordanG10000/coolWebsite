@@ -111,11 +111,8 @@ h1 {
     align-items: center;
     justify-content: center;
     user-select: none;
-    user-drag: none;
-
     & img {
         user-select: none;
-        user-drag: none;
         width: 100px;
         height: 100px;
     }
