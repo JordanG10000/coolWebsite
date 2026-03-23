@@ -110,6 +110,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
+    user-drag: none;
+
     & img {
         user-select: none;
         user-drag: none;
