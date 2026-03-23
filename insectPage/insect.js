@@ -23,8 +23,8 @@ const createInsect = (src, alt) => {
 }
 
 const game = (src, alt) => {
-    setTimeout(createInsect(src, alt), 1000);
     setInterval(updateTimer(), 1000);
+    setTimeout(createInsect(src, alt), 1000);
 }
 
 startBtn.addEventListener('click', () => {
@@ -65,5 +65,5 @@ function increaseScore() {
 function updateTimer() {
     seconds++
     console.log(seconds)
-    timer.innerText = `Time: ${Math.floor(seconds % 60)}:${Math.floor(seconds/60)}`
+    timer.innerText = `Time: ${Math.floor(seconds % 60)}:${Math.floor(seconds / 60)}`
 }
