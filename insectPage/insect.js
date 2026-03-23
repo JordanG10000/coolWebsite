@@ -11,12 +11,14 @@ const createInsect = (src, alt) => {
     insect.src = src;
     insect.alt = alt;
     insect.style.transform = `rotate(${Math.random() * 360}deg)`;
+
     let {x,y} = randomLocation()
     insect.style.top = `${y}px`;
     insect.style.left = `${x}px`;
+    
     insect.addEventListener("click", () => {
         insect.classList.add("caught")
-        settimeout( ( => insect.remove(), 2000))
+        setTimeout(insect.remove(), 2000)
         addInsects()
     })
     gameContainer.append(insect);
