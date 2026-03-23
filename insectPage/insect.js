@@ -59,7 +59,7 @@ function catchInsect(insect) {
     insect.classList.add("caught");
     increaseScore()
     // setTimeout(() => insect.remove(), 200);
-    insect.remove()
+    insect.parentNode.remove()
 }
 
 function increaseScore() {
