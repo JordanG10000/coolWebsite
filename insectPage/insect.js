@@ -65,5 +65,7 @@ function increaseScore() {
 function updateTimer() {
     seconds++
     let m = Math.floor(seconds/60);
-    timer.innerText = `Time: ${m}:${Math.floor(seconds / 60)}`
+    let s = seconds % 60
+    if 
+    timer.innerText = `Time: ${m}:${s}`
 }
