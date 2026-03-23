@@ -18,12 +18,13 @@ const createInsect = (src, alt) => {
     insect.style.left = `${x}px`;
     insect.addEventListener("click", (e) => {
         catchInsect(e.target);
+        createInsect(src, alt)
     })
     gameContainer.append(insect);
 }
 
 const game = (src, alt) => {
-    setInterval(updateTimer(), 1000);
+    setInterval(updateTimer, 1000);
     setTimeout(createInsect(src, alt), 1000);
 }
 
@@ -66,6 +67,14 @@ function updateTimer() {
     seconds++
     let m = Math.floor(seconds/60);
     let s = seconds % 60
-    if 
+
+    if (m < 10) {
+        m = `0${m}`
+    }
+
+    if (s < 10) {
+        s = `0${s}`
+    }
+
     timer.innerText = `Time: ${m}:${s}`
 }
