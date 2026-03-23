@@ -55,7 +55,8 @@ function randomLocation() {
 function catchInsect(insect) {
     insect.classList.add("caught");
     increaseScore()
-    setTimeout(() => insect.remove(), 2000);
+    // setTimeout(() => insect.remove(), 200);
+    insect.remove()
 }
 
 function increaseScore() {
