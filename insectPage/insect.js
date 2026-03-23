@@ -2,7 +2,8 @@ const screens = document.querySelectorAll(".screen");
 const insectBtns = document.querySelectorAll(".chooseInsectBtn");
 const startBtn = document.getElementById("start-btn");
 const gameContainer = document.getElementById("game-container");
-
+const scoreCount = document.getElementById("score");
+let score = 0;
 
 
 const createInsect = (src, alt) => {
@@ -50,5 +51,11 @@ function randomLocation() {
 
 function catchInsect(insect) {
     insect.classList.add("caught");
+    increaseScore()
     setTimeout(() => insect.remove(), 2000);
+}
+
+function increaseScore() {
+    score++;
+    scoreCount.innerText = `Score: ${score}`
 }
