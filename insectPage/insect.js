@@ -5,6 +5,7 @@ const gameContainer = document.getElementById("game-container");
 const scoreCount = document.getElementById("score");
 const timer = document.getElementById("time");
 const message = document.getElementById("message");
+let mult = 2;
 let score = 0;
 let seconds = 0;
 
@@ -21,7 +22,9 @@ const createInsect = (src, alt) => {
     insect.style.background = "red";
     insect.addEventListener("click", (e) => {
         catchInsect(e.target);
-        createInsect(src, alt);
+        for (let i = 0; i < mult; i++) {
+            createInsect(src, alt);
+        }
     })
     gameContainer.append(insect);
     insect.append(img);
@@ -59,8 +62,7 @@ function randomLocation() {
 function catchInsect(insect) {
     insect.classList.add("caught");
     increaseScore()
-    // setTimeout(() => insect.remove(), 200);
-    insect.parentNode.remove()
+    insect.parentNode.remove();
 }
 
 function increaseScore() {
@@ -72,8 +74,8 @@ function increaseScore() {
 }
 
 function updateTimer() {
-    seconds++
-    let m = Math.floor(seconds/60);
+    seconds++;
+    let m = Math.floor(seconds / 60);
     let s = seconds % 60;
 
     if (m < 10) {
