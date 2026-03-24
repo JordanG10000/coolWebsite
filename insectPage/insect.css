@@ -112,7 +112,6 @@ h1 {
     justify-content: center;
     user-select: none;
     & img {
-        user-select: none;
         width: 100px;
         height: 100px;
     }
