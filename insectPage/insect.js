@@ -10,7 +10,7 @@ let seconds = 0;
 
 const createInsect = (src, alt) => {
     let insect = document.createElement("div");
-    let img = document.createElement("img")
+    let img = document.createElement("img");
     insect.classList.add("insect");
     img.src = src;
     img.alt = alt;
@@ -21,7 +21,7 @@ const createInsect = (src, alt) => {
     insect.style.background = "red";
     insect.addEventListener("click", (e) => {
         catchInsect(e.target);
-        createInsect(src, alt)
+        createInsect(src, alt);
     })
     gameContainer.append(insect);
     insect.append(img);
@@ -53,7 +53,7 @@ function randomLocation() {
     let height = window.innerHeight;
     let x = Math.random() * (width - 200) + 100;
     let y = Math.random() * (height - 200) + 100;
-    return { x, y }
+    return { x, y };
 }
 
 function catchInsect(insect) {
@@ -65,21 +65,24 @@ function catchInsect(insect) {
 
 function increaseScore() {
     score++;
-    scoreCount.innerText = `Score: ${score}`
+    scoreCount.innerText = `Score: ${score}`;
+    if (score >= 30) {
+        message.classList.add("visible");
+    }
 }
 
 function updateTimer() {
     seconds++
     let m = Math.floor(seconds/60);
-    let s = seconds % 60
+    let s = seconds % 60;
 
     if (m < 10) {
-        m = `0${m}`
+        m = `0${m}`;
     }
 
     if (s < 10) {
-        s = `0${s}`
+        s = `0${s}`;
     }
 
-    timer.innerText = `Time: ${m}:${s}`
+    timer.innerText = `Time: ${m}:${s}`;
 }
