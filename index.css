@@ -50,6 +50,7 @@ header {
     height: 300px;
     padding: 20px;
     background-color: grey;
+    position: relative;
 
     & .textContainer {
         display: flex;
@@ -75,4 +76,12 @@ header {
 
     }
 
+}
+
+.textContainer::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-image: url("images/fly.svg");
 }
