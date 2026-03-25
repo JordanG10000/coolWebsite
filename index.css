@@ -8,19 +8,9 @@ body {
 
     & h2 {
         font-size: 100px;
-        & p {
-        
-        }
+
     }
     & a {
         background-color: red;
     }
-}
-
-.pageSections > h2 {
-    font-size: 100px;
-}
-
-.pageSections > a {
-    background-color: red;
 }
