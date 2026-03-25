@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.pageSections {
+    width: 100vw;
+    height: 300px;
+    
+    & h2 {
+        font-size: 100px;
+    }
+    & a {
+        background-color: red;
+    }
+}
+
+/* .pageSections > h2 {
+    font-size: 100px;
+}
+
+.pageSections > a {
+    background-color: red;
+} */
