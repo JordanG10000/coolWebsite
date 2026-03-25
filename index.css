@@ -5,7 +5,7 @@ body {
 .pageSections {
     width: 100vw;
     height: 300px;
-    
+
     & h2 {
         font-size: 100px;
     }
@@ -14,10 +14,10 @@ body {
     }
 }
 
-/* .pageSections > h2 {
+.pageSections > h2 {
     font-size: 100px;
 }
 
 .pageSections > a {
     background-color: red;
-} */
+}
