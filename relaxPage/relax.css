@@ -73,7 +73,7 @@ body {
 .text {
     z-index: 2;
     color: white;
-    content: "al;kdsjfj";
+    font-size: 2rem;
 }
 
 @keyframes rotate {
