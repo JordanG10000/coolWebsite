@@ -9,6 +9,9 @@ body {
     height: 60%;
     width: 100%;
     background: teal;
+    display: flex;
+    align-items: center;
+    flex-direction: center;
 }
 
 .ground {
