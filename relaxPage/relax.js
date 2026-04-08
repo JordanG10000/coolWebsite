@@ -20,6 +20,9 @@ function breathAnim() {
             container.classList.remove('grow');
             container.classList.add('shrink');
         }, holdTime);
+
     }, breathTime);
 
 }
+
+setInterval(breathAnim, totalTime);
