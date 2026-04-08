@@ -43,6 +43,33 @@ body {
         left: 0;
         bottom: 0;
 
+        & .window {
+            background-color: lightblue;
+            width: 15%;
+            height: 30%;
+            border: 10px brown solid;
+            border-radius: 2px;
+            position: absolute;
+            right: 50%;
+            top: 50%;
+
+            & .wood {
+                position: absolute;
+                background-color: brown;
+                top: 50%;
+                width: 100%;
+                height: 10%;
+
+            }
+
+            & .wood.rotate {
+                height: 100%;
+                width: 10%;
+                left: 50%;
+                top: 0;
+            }
+        }
+
         & .door {
             height: 50%;
             width: 15%;
