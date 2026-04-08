@@ -1,0 +1,19 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: none;
+    overflow: hide;
+}
+
+.sky {
+    height: 60%;
+    width: 100%;
+    background: teal;
+}
+
+.ground {
+    height: 40%;
+    width: 100%;
+    background: green;
+}
+
