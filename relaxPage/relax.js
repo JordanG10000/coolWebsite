@@ -1,1 +1,4 @@
-let container = document.queryselector(".container");
+let container = document.querySelector(".container");
+let text = document.querySelector(".text");
+
+
