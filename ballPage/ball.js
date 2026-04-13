@@ -29,7 +29,14 @@ createLPaddel();
 createBall();
 
 
-setInterval(moveBall, 10);
+// setInterval(moveBall, 10);
+
+function animate() {
+    moveBall();
+    requestAnimationFrame(animate);
+}
+
+animate();
 
 function moveBall() {
     xPos += xDirection * speed;
@@ -42,6 +49,19 @@ function moveBall() {
     if (xPos > (windowWidth - (ballRadius * 2)) || xPos < 0) {
         xDirection *= -1;
     }
+
+
+    // Paddle Collisions
+    if (
+        (yPos - ballRadius * 2 >= windowHeight - pPosY) &&
+        (yPos <= pPosY - padHeight) &&
+        (yPos <= padWidth) &&
+        (xDirection == -1)
+    ) {
+        xDirection *= -1;
+    }
+
+    // Movement Handler
     if (pUp === true) {
         if (pPosY >= 0) {
             pPosY -= padSpeed;
@@ -51,14 +71,6 @@ function moveBall() {
         if (pPosY <= windowHeight - padHeight) {
             pPosY += padSpeed;
         }
-    }
-    if (
-        (yPos - ballRadius * 2 >= windowHeight - pPosY) &&
-        (yPos <= pPosY - padHeight) &&
-        (yPos <= padWidth) &&
-        (xDirection == -1)
-    ) {
-        xDirection *= -1;
     }
     p.top = `${pPosY}px`;
 }
