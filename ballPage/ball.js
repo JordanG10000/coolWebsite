@@ -52,6 +52,9 @@ function moveBall() {
             pPosY += padSpeed;
         }
     }
+    if (
+        ()
+    )
     p.top = `${pPosY}px`;
 }
 
