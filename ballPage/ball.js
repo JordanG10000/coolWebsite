@@ -43,10 +43,14 @@ function moveBall() {
         xDirection *= -1;
     }
     if (pUp === true) {
-        pPosY -= padSpeed;
+        if (pPosY >= 0) {
+            pPosY -= padSpeed;
+        }
     }
     if (pDown === true) {
-        pPosY += padSpeed;
+        if (pPosY <= windowHeight - padHeight) {
+            pPosY += padSpeed;
+        }
     }
     p.top = `${pPosY}px`;
 }
@@ -81,16 +85,13 @@ document.addEventListener('keydown', (e) => {
     if (e.key == 'w' || e.key == 'ArrowUp') {
         if (pPosY >= 0) {
             pUp = true;
-            // pPosY -= padSpeed;
         }
     }
     if (e.key == 's' || e.key == 'ArrowDown') {
         if (pPosY <= windowHeight - padHeight) {
             pDown = true;
-            // pPosY += padSpeed;
         }
     }
-    // p.top = `${pPosY}px`;
 })
 
 document.addEventListener('keyup', (e) => {
