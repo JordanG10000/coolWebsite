@@ -53,8 +53,13 @@ function moveBall() {
         }
     }
     if (
-        (yPos)
-    )
+        (yPos - ballRadius * 2 >= padHeight) &&
+        (yPos <= pPosY - padHeight) &&
+        (yPos <= padWidth) &&
+        (xDirection == -1)
+    ) {
+        xDirection *= -1;
+    }
     p.top = `${pPosY}px`;
 }
 
