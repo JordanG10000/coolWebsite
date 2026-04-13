@@ -48,6 +48,7 @@ function moveBall() {
     if (pDown === true) {
         pPosY += padSpeed;
     }
+    p.top = `${pPosY}px`;
 }
 
 function createLPaddel() {
@@ -80,16 +81,16 @@ document.addEventListener('keydown', (e) => {
     if (e.key == 'w' || e.key == 'ArrowUp') {
         if (pPosY >= 0) {
             pUp = true;
-            pPosY -= padSpeed;
+            // pPosY -= padSpeed;
         }
     }
     if (e.key == 's' || e.key == 'ArrowDown') {
         if (pPosY <= windowHeight - padHeight) {
             pDown = true;
-            pPosY += padSpeed;
+            // pPosY += padSpeed;
         }
     }
-    p.top = `${pPosY}px`;
+    // p.top = `${pPosY}px`;
 })
 
 document.addEventListener('keyup', (e) => {
@@ -98,6 +99,6 @@ document.addEventListener('keyup', (e) => {
         pUp = false;
     }
     if (e.key == 's' || e.key == 'ArrowDown') {
-        pDown = true;
+        pDown = false;
     }
 })
