@@ -53,7 +53,7 @@ function moveBall() {
         }
     }
     if (
-        ()
+        (yPos)
     )
     p.top = `${pPosY}px`;
 }
