@@ -53,7 +53,7 @@ function moveBall() {
         }
     }
     if (
-        (yPos - ballRadius * 2 >= padHeight) &&
+        (yPos - ballRadius * 2 >= windowHeight - pPosY) &&
         (yPos <= pPosY - padHeight) &&
         (yPos <= padWidth) &&
         (xDirection == -1)
