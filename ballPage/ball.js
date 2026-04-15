@@ -3,6 +3,22 @@
 let windowHeight = window.innerHeight;
 let windowWidth = window.innerWidth;
 
+// Paddel Variables
+const lPaddel = document.createElement("div");
+document.body.appendChild(lPaddel);
+let padWidth = 20;
+let padHeight = 150;
+let pPosY = windowHeight / 2 - padHeight / 2;
+let pPosX = 30;
+let pUp = false;
+let pDown = false;
+let padSpeed = 10;
+let p = lPaddel.style;
+
+let padTop = pPosY;
+let padBtm = pPosY + padHeight;
+let padRgt = pPosX + padWidth;
+
 // Ball Variables
 const ball = document.createElement("div");
 let ballRadius = 30;
@@ -13,16 +29,9 @@ let yDirection = 1;
 let speed = 5;
 let s = ball.style
 
-// Paddel Variables
-const lPaddel = document.createElement("div");
-document.body.appendChild(lPaddel);
-let padWidth = 20;
-let padHeight = 150;
-let pPosY = windowHeight / 2 - padHeight / 2;
-let pUp = false;
-let pDown = false;
-let padSpeed = 10;
-let p = lPaddel.style;
+let ballTop = yPos;
+let ballBtm = yPos + 2 * ballRadius;
+let ballLft = xPos;
 
 
 createLPaddel();
@@ -52,14 +61,17 @@ function moveBall() {
 
 
     // Paddle Collisions
+console.log("ballBtm: "+ballBtm)
+
     if (
-        (yPos - ballRadius * 2 >= windowHeight - pPosY) &&
-        (yPos <= pPosY - padHeight) &&
-        (yPos <= padWidth) &&
+        (ballBtm >= padTop) &&
+        (ballTop <= padBtm) &&
+        (ballLft <= padRgt) &&
         (xDirection == -1)
     ) {
         xDirection *= -1;
     }
+
 
     // Movement Handler
     if (pUp === true) {
@@ -80,7 +92,7 @@ function createLPaddel() {
     p.width = `${padWidth}px`;
     p.backgroundColor = 'blue';
     p.position = 'absolute';
-    p.left = `50px`;
+    p.left = `${pPosX}px`;
     p.top = `${windowHeight / 2 - padHeight / 2}px`;
 }
 
@@ -101,7 +113,6 @@ window.addEventListener('resize', () => {
 })
 
 document.addEventListener('keydown', (e) => {
-    console.log(e.key);
     if (e.key == 'w' || e.key == 'ArrowUp') {
         if (pPosY >= 0) {
             pUp = true;
@@ -115,7 +126,6 @@ document.addEventListener('keydown', (e) => {
 })
 
 document.addEventListener('keyup', (e) => {
-    console.log(e.key);
     if (e.key == 'w' || e.key == 'ArrowUp') {
         pUp = false;
     }
