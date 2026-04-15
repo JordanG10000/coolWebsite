@@ -61,7 +61,13 @@ function moveBall() {
 
 
     // Paddle Collisions
-console.log("ballBtm: "+ballBtm)
+
+    let padTop = pPosY;
+    let padBtm = pPosY + padHeight;
+    let padRgt = pPosX + padWidth;
+    let ballTop = yPos;
+    let ballBtm = yPos + 2 * ballRadius;
+    let ballLft = xPos;
 
     if (
         (ballBtm >= padTop) &&
