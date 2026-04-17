@@ -160,8 +160,18 @@ function createBall() {
 }
 
 window.addEventListener('resize', () => {
+    let oldHeight = windowHeight;
+    let oldWidth = windowWidth;
+
     windowHeight = window.innerHeight;
     windowWidth = window.innerWidth;
+
+    if (yPos += windowHeight - oldHeight >= 0) {
+        yPos += windowHeight - oldHeight;
+    }
+    if (xPos += windowWidth - oldWidth >= 0) {
+        xPos += windowWidth - oldWidth;
+    }
 })
 
 document.addEventListener('keydown', (e) => {
