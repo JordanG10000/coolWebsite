@@ -156,6 +156,12 @@ function createBall() {
 window.addEventListener('resize', () => {
     windowHeight = window.innerHeight;
     windowWidth = window.innerWidth;
+
+    p.left = `${pPosX}px`;
+    p.top = `${windowHeight / 2 - padHeight / 2}px`;
+
+    p2.left = `${p2PosX}px`;
+    p2.top = `${windowHeight / 2 - padHeight / 2}px`;
 })
 
 document.addEventListener('keydown', (e) => {
