@@ -15,10 +15,13 @@ let pDown = false;
 let padSpeed = 10;
 let p = lPaddel.style;
 
-let padTop = pPosY;
-let padBtm = pPosY + padHeight;
-let padRgt = pPosX + padWidth;
-
+const rPaddel = document.createElement("div");
+document.body.appendChild(rPaddel);
+let p2PosY = windowHeight / 2 - padHeight / 2;
+let p2PosX = windowWidth - pPosX;
+let p2Up = false;
+let p2Down = false;
+let p2 = rPaddel.style;
 // Ball Variables
 const ball = document.createElement("div");
 let ballRadius = 30;
@@ -29,12 +32,8 @@ let yDirection = 1;
 let speed = 5;
 let s = ball.style
 
-let ballTop = yPos;
-let ballBtm = yPos + 2 * ballRadius;
-let ballLft = xPos;
 
-
-createLPaddel();
+createPaddels();
 createBall();
 
 
@@ -93,13 +92,20 @@ function moveBall() {
     p.top = `${pPosY}px`;
 }
 
-function createLPaddel() {
+function createPaddels() {
     p.height = `${padHeight}px`;
     p.width = `${padWidth}px`;
     p.backgroundColor = 'blue';
     p.position = 'absolute';
     p.left = `${pPosX}px`;
     p.top = `${windowHeight / 2 - padHeight / 2}px`;
+
+    p2.height = `${padHeight}px`;
+    p2.width = `${padWidth}px`;
+    p2.backgroundColor = 'blue';
+    p2.position = 'absolute';
+    p2.left = `${p2PosX}px`;
+    p2.top = `${windowHeight / 2 - padHeight / 2}px`;
 }
 
 function createBall() {
