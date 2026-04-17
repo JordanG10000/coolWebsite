@@ -51,7 +51,6 @@ function moveBall() {
     yPos += yDirection * speed;
     s.left = `${xPos}px`;
     s.top = `${yPos}px`;
-    console.log(windowWidth);
 
     if (yPos > (windowHeight - (ballRadius * 2)) || yPos < 0) {
         yDirection *= -1;
