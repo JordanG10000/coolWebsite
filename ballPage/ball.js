@@ -52,6 +52,7 @@ function moveBall() {
     s.left = `${xPos}px`;
     s.top = `${yPos}px`;
 
+
     if (yPos > (windowHeight - (ballRadius * 2)) || yPos < 0) {
         yDirection *= -1;
     }
@@ -68,6 +69,10 @@ function moveBall() {
     let padRgt = pPosX + padWidth;
 
     // Right Paddel
+    let p2PosX = windowWidth - pPosX - padWidth;
+    p2.left = `${p2PosX}px`;
+
+
     let pad2Top = p2PosY;
     let pad2Btm = p2PosY + padHeight;
     let pad2Lft = p2PosX;
@@ -156,12 +161,6 @@ function createBall() {
 window.addEventListener('resize', () => {
     windowHeight = window.innerHeight;
     windowWidth = window.innerWidth;
-
-    p.left = `${pPosX}px`;
-    p.top = `${windowHeight / 2 - padHeight / 2}px`;
-
-    p2.left = `${p2PosX}px`;
-    p2.top = `${windowHeight / 2 - padHeight / 2}px`;
 })
 
 document.addEventListener('keydown', (e) => {
