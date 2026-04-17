@@ -18,7 +18,7 @@ let p = lPaddel.style;
 const rPaddel = document.createElement("div");
 document.body.appendChild(rPaddel);
 let p2PosY = windowHeight / 2 - padHeight / 2;
-let p2PosX = windowWidth - pPosX;
+let p2PosX = windowWidth - pPosX - padWidth;
 let p2Up = false;
 let p2Down = false;
 let p2 = rPaddel.style;
@@ -63,9 +63,17 @@ function moveBall() {
 
     // Paddle Collisions
 
+    // Left Paddel
     let padTop = pPosY;
     let padBtm = pPosY + padHeight;
     let padRgt = pPosX + padWidth;
+
+    // Right Paddel
+    let pad2Top = p2PosY;
+    let p2adBtm = p2PosY + padHeight;
+    let pad2Rgt = p2PosX + padWidth;
+
+    // Ball
     let ballTop = yPos;
     let ballBtm = yPos + 2 * ballRadius;
     let ballLft = xPos;
@@ -107,6 +115,7 @@ function moveBall() {
 }
 
 function createPaddels() {
+    // Left paddel
     p.height = `${padHeight}px`;
     p.width = `${padWidth}px`;
     p.backgroundColor = 'blue';
@@ -114,6 +123,7 @@ function createPaddels() {
     p.left = `${pPosX}px`;
     p.top = `${windowHeight / 2 - padHeight / 2}px`;
 
+    // Right paddel
     p2.height = `${padHeight}px`;
     p2.width = `${padWidth}px`;
     p2.backgroundColor = 'blue';
