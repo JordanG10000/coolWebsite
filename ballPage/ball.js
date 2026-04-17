@@ -81,6 +81,7 @@ function moveBall() {
     let ballTop = yPos;
     let ballBtm = yPos + 2 * ballRadius;
     let ballLft = xPos;
+    let ballRgt = xPos + 2 * ballRadius;
 
     // Left paddel
     if (
@@ -96,7 +97,7 @@ function moveBall() {
     if (
         (ballBtm >= pad2Top) &&
         (ballTop <= pad2Btm) &&
-        (ballLft >= pad2Lft) &&
+        (ballRgt >= pad2Lft) &&
         (xDirection == 1)
     ) {
         xDirection *= -1;
