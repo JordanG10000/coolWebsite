@@ -92,6 +92,18 @@ function moveBall() {
         }
     }
     p.top = `${pPosY}px`;
+
+    if (p2Up === true) {
+        if (p2PosY >= 0) {
+            p2PosY -= padSpeed;
+        }
+    }
+    if (p2Down === true) {
+        if (p2PosY <= windowHeight - padHeight) {
+            p2PosY += padSpeed;
+        }
+    }
+    p2.top = `${p2PosY}px`;
 }
 
 function createPaddels() {
@@ -127,23 +139,43 @@ window.addEventListener('resize', () => {
 })
 
 document.addEventListener('keydown', (e) => {
-    if (e.key == 'w' || e.key == 'ArrowUp') {
+    // Left paddel
+    if (e.key == 'w') {
         if (pPosY >= 0) {
             pUp = true;
         }
     }
-    if (e.key == 's' || e.key == 'ArrowDown') {
+    if (e.key == 's') {
         if (pPosY <= windowHeight - padHeight) {
             pDown = true;
+        }
+    }
+    // Right paddel
+    if (e.key == 'ArrowUp') {
+        if (p2PosY >= 0) {
+            p2Up = true;
+        }
+    }
+    if (e.key == 'ArrowDown') {
+        if (p2PosY <= windowHeight - padHeight) {
+            p2Down = true;
         }
     }
 })
 
 document.addEventListener('keyup', (e) => {
-    if (e.key == 'w' || e.key == 'ArrowUp') {
+    // Left Paddel
+    if (e.key == 'w') {
         pUp = false;
     }
-    if (e.key == 's' || e.key == 'ArrowDown') {
+    if (e.key == 's') {
         pDown = false;
+    }
+    // Right paddel
+    if (e.key == 'ArrowUp') {
+        p2Up = false;
+    }
+    if (e.key == 'ArrowDown') {
+        p2Down = false;
     }
 })
