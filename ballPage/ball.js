@@ -70,19 +70,30 @@ function moveBall() {
 
     // Right Paddel
     let pad2Top = p2PosY;
-    let p2adBtm = p2PosY + padHeight;
-    let pad2Rgt = p2PosX + padWidth;
+    let pad2Btm = p2PosY + padHeight;
+    let pad2Lft = p2PosX;
 
     // Ball
     let ballTop = yPos;
     let ballBtm = yPos + 2 * ballRadius;
     let ballLft = xPos;
 
+    // Left paddel
     if (
         (ballBtm >= padTop) &&
         (ballTop <= padBtm) &&
         (ballLft <= padRgt) &&
         (xDirection == -1)
+    ) {
+        xDirection *= -1;
+    }
+
+    // Right paddel
+    if (
+        (ballBtm >= pad2Top) &&
+        (ballTop <= pad2Btm) &&
+        (ballLft >= pad2Lft) &&
+        (xDirection == 1)
     ) {
         xDirection *= -1;
     }
