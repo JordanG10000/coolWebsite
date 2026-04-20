@@ -13,7 +13,7 @@ trigger.addEventListener("click", () => {
 })
 
 let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Jordan", "Huesca", "Austin", "Bowling", "Williams", "Goodall"];
-let words = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
+let simpleWords = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 let nouns = [
     "time", "person", "year", "way", "day", "thing", "man", "world", "life", "hand",
     "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government",
@@ -32,6 +32,10 @@ let conjunctions = [
 
 let punctuation = [".", "!", "?", "...",];
 
+
+
+
+
 generateBtn.addEventListener("click", () => {
     if (slider.classList.contains("complex")) {
         complexQuote();
@@ -42,38 +46,46 @@ generateBtn.addEventListener("click", () => {
     getAuthor();
 })
 
+
+
 function complexQuote() {
+    
+    const words = {
+        randomConjunction: conjunctions[Math.floor(Math.random() * conjunctions.length)],
+        randomNoun: nouns[Math.floor(Math.random() * nouns.length)],
+        randomVerb: verbs[Math.floor(Math.random() * verbs.length)]
+    }
+
     let text = "";
     let sentences = (Math.floor(Math.random() * maxSentences + 1));
     for (let i = 0; i < sentences; i++)
     {
         // Format: "Conjunction -> Noun -> Verb -> Noun"
-        let randomConjunction = `${conjunctions[Math.floor(Math.random() * conjunctions.length)]}`;
-        let randomNoun = `${nouns[Math.floor(Math.random() * nouns.length)]}`;
-        let randomNoun2 = `${nouns[Math.floor(Math.random() * nouns.length)]}`;
-        let randomVerb = `${verbs[Math.floor(Math.random() * verbs.length)]}`;
+        let randomConjunction = words.randomConjunction;
         let rndmPunctuation = punctuation[Math.floor(Math.random() * punctuation.length)];
 
-        upperConjunction = randomConjunction.charAt(0).toUpperCase() + randomConjunction.slice(1);
+        upperConjunction = words.randomConjunction.charAt(0).toUpperCase() + randomConjunction.slice(1);
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
-            text += `${upperConjunction} ${randomNoun} ${randomVerb} ${randomNoun2 + rndmPunctuation}`;
+            text += `${upperConjunction} ${words.randomNoun} ${words.randomVerb} ${words.randomNoun + rndmPunctuation}`;
         }
         else {
-            text += `  ${upperConjunction} ${randomNoun} ${randomVerb} ${randomNoun2 + rndmPunctuation}`;
+            text += `  ${upperConjunction} ${words.randomNoun} ${words.randomVerb} ${words.randomNoun + rndmPunctuation}`;
         }
     }
     lengthIndicator.innerText = `Quote Sentences: ${sentences}`;
     quoteText.innerText = text;
 }
 
+
+
 function simpleQuote() {
     let text = "";
-    let quoteLength = (Math.floor(Math.random() * words.length));
+    let quoteLength = (Math.floor(Math.random() * simpleWords.length));
     for (let i = 0; i < quoteLength; i++)
     {
         // Gets as many words as the length of the quote
-        let randomWord = `${words[Math.floor(Math.random() * words.length)]}`
+        let randomWord = `${simpleWords[Math.floor(Math.random() * simpleWords.length)]}`
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
             text += randomWord;
@@ -88,6 +100,8 @@ function simpleQuote() {
 
 
 }
+
+
 
 function getAuthor() {
      let author = "-";

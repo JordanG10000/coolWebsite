@@ -33,7 +33,7 @@ header {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url("images/island.avif");
+    background-image: url("../images/island.avif");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -2;
@@ -116,37 +116,37 @@ header {
 
 
 #search:after {
-    background-image: url("images/searchPage.png");
+    background-image: url("../images/searchPage.png");
 }
 
 #loading:after {
-    background-image: url("images/viewPage.png");
+    background-image: url("../images/viewPage.png");
 }
 
 #spin:after {
-    background-image: url("images/aneurysmPage.png");
+    background-image: url("../images/aneurysmPage.png");
 }
 
 #vacation:after {
-    background-image: url("images/vacationsPage.png");
+    background-image: url("../images/vacationsPage.png");
 }
 
 #blocks:after {
-    background-image: url("images/blocksPage.png");
+    background-image: url("../images/blocksPage.png");
 }
 
 #quotes:after {
-    background-image: url("images/quotesPage.png");
+    background-image: url("../images/quotesPage.png");
 }
 
 #sounds:after {
-    background-image: url("images/soundsPage.png");
+    background-image: url("../images/soundsPage.png");
 }
 
 #fake:after {
-    background-image: url("images/fakePage.png");
+    background-image: url("../images/fakePage.png");
 }
 
 #insects:after {
-    background-image: url("images/kabloomPage.png");
+    background-image: url("../images/kabloomPage.png");
 }
