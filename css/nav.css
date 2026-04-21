@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: white;
+    color: #222222;
+    padding-bottom: 50px;
+}
+
+.container {
+    max-width: 1200px;
+    /* background: #fafafa;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px; */
+}
+
+.nav {
+    position: fixed;
+    background: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    & .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0px
+    }
+
+    & ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    & a {
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 7px 15px;
+
+        &:hover {
+            font-weight: bold;
+            color: #c0392b;
+        }
+
+        &:current {
+            font-weight: bold;
+            color: #c0392b;
+        }
+    }
+
+    transition: all ease 0.1s;
+
+}
+
+.nav.active {
+    background-color: #ffffff;
+
+    & a {
+        color: black;
+    }
+
+    transition: all ease 0.1s;
+
+}
+
+.hero {
+    background-image: url("../images/sunset.avif");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -2;
+
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+    opacity: .5;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+.hero p {
+    font-size: 20px;
+
+}
+
+.content {
+    padding: 0 0 0 35px;
+}
+
+.content h2,
+.content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p {
+    color: #555555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+}

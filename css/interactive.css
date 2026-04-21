@@ -1,3 +1,8 @@
+:root {
+    --width: 90px;
+    --unWidth: -90px;
+}
+
 body {
     display: flex;
     height: 100vh;
@@ -53,13 +58,15 @@ button:hover {
 
     & p {
         color: white;
+        user-select: none;
     }
 
     & .slider {
         content: "";
-        width: 90px;
+        width: var(--width);
         height: 50px;
         background-color: darkgrey;
+        background: url(../images/slider.svg);
         position: absolute;
         right: 0;
         transition: all ease 0.4s;
@@ -68,5 +75,5 @@ button:hover {
 }
 
 .complex {
-    transform: translate(-90px, 0);
+    transform: translate(var(--unWidth), 0);
 }

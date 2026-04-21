@@ -1,0 +1,89 @@
+const screens = document.querySelectorAll(".screen");
+const insectBtns = document.querySelectorAll(".chooseInsectBtn");
+const startBtn = document.getElementById("start-btn");
+const gameContainer = document.getElementById("game-container");
+const scoreCount = document.getElementById("score");
+const timer = document.getElementById("time");
+const message = document.getElementById("message");
+let mult = 2;
+let score = 0;
+let seconds = 0;
+
+const createInsect = (src, alt) => {
+    let insect = document.createElement("div");
+    let img = document.createElement("img");
+    insect.classList.add("insect");
+    img.src = src;
+    img.alt = alt;
+    insect.style.transform = `rotate(${Math.random() * 360}deg)`;
+    let { x, y } = randomLocation()
+    insect.style.top = `${y}px`;
+    insect.style.left = `${x}px`;
+    insect.addEventListener("click", (e) => {
+        catchInsect(e.target);
+        for (let i = 0; i < mult; i++) {
+            createInsect(src, alt);
+        }
+    })
+    gameContainer.append(insect);
+    insect.append(img);
+}
+
+const game = (src, alt) => {
+    setInterval(updateTimer, 1000);
+    setTimeout(createInsect(src, alt), 1000);
+}
+
+startBtn.addEventListener('click', () => {
+    screens[0].classList.toggle("hide");
+    screens[1].classList.toggle("hide");
+})
+
+for (let btn of insectBtns) {
+    btn.addEventListener('click', () => {
+        screens[1].classList.toggle("hide");
+        screens[2].classList.toggle("hide");
+        let img = btn.querySelector("img");
+        src = img.getAttribute("src");
+        alt = img.getAttribute("alt");
+        game(src, alt);
+    })
+}
+
+function randomLocation() {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let x = Math.random() * (width - 200) + 100;
+    let y = Math.random() * (height - 200) + 100;
+    return { x, y };
+}
+
+function catchInsect(insect) {
+    insect.classList.add("caught");
+    increaseScore()
+    insect.parentNode.remove();
+}
+
+function increaseScore() {
+    score++;
+    scoreCount.innerText = `Score: ${score}`;
+    if (score >= 30) {
+        message.classList.add("visible");
+    }
+}
+
+function updateTimer() {
+    seconds++;
+    let m = Math.floor(seconds / 60);
+    let s = seconds % 60;
+
+    if (m < 10) {
+        m = `0${m}`;
+    }
+
+    if (s < 10) {
+        s = `0${s}`;
+    }
+
+    timer.innerText = `Time: ${m}:${s}`;
+}

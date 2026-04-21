@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>catch the insects</title>
+        <link rel="stylesheet" href="css/insect.css">
+        <link rel="stylesheet" href="css/button.css">
+    </head>
+
+    <body>
+        <nav id="backButton">
+            <a href="index.html">TAKE ME BACK</a>
+        </nav>
+        <section class="screen">
+            <h1>INSECTS GO KABLOOM</h1>
+            <button class="btn" id="start-btn">Play</button>
+        </section>
+
+        <section class="screen hide">
+            <h1>Select Favorite Insect</h1>
+            <ul class="insectList">
+                <li>
+                    <button class="chooseInsectBtn">
+                        <p>Fly</p>
+                        <img src="images/fly.svg" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="chooseInsectBtn">
+                        <p>MouseQuito</p>
+                        <img src="images/mosquito.svg" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="chooseInsectBtn">
+                        <p>Spider</p>
+                        <img src="images/spider.png" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="chooseInsectBtn">
+                        <p>High Five!</p>
+                        <img src="images/hand.svg" alt="">
+                    </button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="screen hide" id="game-container">
+            <h3 id="time">Time: 00:00</h3>
+            <h3 id="score">Score: 0</h3>
+            <h5 id="message">
+                Are you annoyed yet? <br>
+                You are playing an impossible game!!
+            </h5>
+        </section>
+
+        <script src="javaScript/insect.js"></script>
+    </body>
+
+</html>

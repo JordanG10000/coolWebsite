@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20px;
+    background-color: black;
+    z-index: 999;
+
+    & h2 {
+        font-size: 2rem;
+        color: white;
+    }
+
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../images/island.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+/*
+    & ::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        opacity: 20%;
+        z-index: -1;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+    } */
+
+    & h1 {
+        font-size: 5rem;
+        color: white;
+    }
+
+    & p {
+        font-size: 1.25rem;
+        color: white;
+    }
+
+    & h1, p {
+        filter: drop-shadow(0 0 7px black)
+    }
+}
+
+.pageSections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: solid 3px white;
+    height: 300px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    position: relative;
+
+    & .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+
+        & h2 {
+            font-size: 3rem;
+        }
+
+        & a {
+            font-size: 2rem;
+            text-decoration: none;
+            color: white;
+            width: 250px;
+            background-color: grey;
+            text-align: center;
+            border: solid 2px white;
+            border-radius: 15px;
+        }
+
+    }
+
+}
+
+.textContainer::after {
+    content: "";
+    width: 45%;
+    height: 95%;
+    position: absolute;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+#search:after {
+    background-image: url("../images/searchPage.png");
+}
+
+#loading:after {
+    background-image: url("../images/viewPage.png");
+}
+
+#spin:after {
+    background-image: url("../images/aneurysmPage.png");
+}
+
+#vacation:after {
+    background-image: url("../images/vacationsPage.png");
+}
+
+#blocks:after {
+    background-image: url("../images/blocksPage.png");
+}
+
+#quotes:after {
+    background-image: url("../images/quotesPage.png");
+}
+
+#sounds:after {
+    background-image: url("../images/soundsPage.png");
+}
+
+#fake:after {
+    background-image: url("../images/fakePage.png");
+}
+
+#insects:after {
+    background-image: url("../images/kabloomPage.png");
+}
