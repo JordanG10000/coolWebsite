@@ -6,18 +6,21 @@ const trigger = document.querySelector(".switch");
 const slider = document.querySelector(".slider");
 let maxSentences = 5;
 
+
 // Random list of words and a random list of first and last names
 
 trigger.addEventListener("click", () => {
     slider.classList.toggle("complex");
 })
 
-let names = ["Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Jordan", "Huesca", "Austin", "Bowling", "Williams", "Goodall"];
+let names = [
+    "Jake", "Isaiah", "James", "John", "Bill", "Faridoni", "Jordan", "Huesca", "Austin", "Bowling",
+    "Williams", "Goodall", "Ta'rique", "Dunte", "Dixon"];
 let simpleWords = ["the", "was", "is", "am", "when", "how", "because", "I", "Jake Faridoni"];
 let nouns = [
     "time", "person", "year", "way", "day", "thing", "man", "world", "life", "hand",
     "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government",
-    "company", "number", "group", "problem", "fact", "Jake Faridoni"
+    "company", "number", "group", "problem", "fact", "Jake Faridoni", "Ta'rique Dunte Dixon"
 ];
 let verbs = [
     "be", "have", "do", "say", "get", "make", "go", "know", "take", "see",
@@ -32,10 +35,6 @@ let conjunctions = [
 
 let punctuation = [".", "!", "?", "...",];
 
-
-
-
-
 generateBtn.addEventListener("click", () => {
     if (slider.classList.contains("complex")) {
         complexQuote();
@@ -46,31 +45,28 @@ generateBtn.addEventListener("click", () => {
     getAuthor();
 })
 
-
+const words = {
+    conjunction() { return conjunctions[Math.floor(Math.random() * conjunctions.length)] },
+    noun() { return nouns[Math.floor(Math.random() * nouns.length)] },
+    verb() { return verbs[Math.floor(Math.random() * verbs.length)] }
+}
 
 function complexQuote() {
-    
-    const words = {
-        randomConjunction: conjunctions[Math.floor(Math.random() * conjunctions.length)],
-        randomNoun: nouns[Math.floor(Math.random() * nouns.length)],
-        randomVerb: verbs[Math.floor(Math.random() * verbs.length)]
-    }
 
     let text = "";
     let sentences = (Math.floor(Math.random() * maxSentences + 1));
-    for (let i = 0; i < sentences; i++)
-    {
+    for (let i = 0; i < sentences; i++) {
         // Format: "Conjunction -> Noun -> Verb -> Noun"
-        let randomConjunction = words.randomConjunction;
+        let randomConjunction = words.conjunction();
         let rndmPunctuation = punctuation[Math.floor(Math.random() * punctuation.length)];
 
-        upperConjunction = words.randomConjunction.charAt(0).toUpperCase() + randomConjunction.slice(1);
+        let upperConjunction = randomConjunction.charAt(0).toUpperCase() + randomConjunction.slice(1);
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
-            text += `${upperConjunction} ${words.randomNoun} ${words.randomVerb} ${words.randomNoun + rndmPunctuation}`;
+            text += `${upperConjunction} ${words.noun()} ${words.verb()} ${words.noun() + rndmPunctuation}`;
         }
         else {
-            text += `  ${upperConjunction} ${words.randomNoun} ${words.randomVerb} ${words.randomNoun + rndmPunctuation}`;
+            text += `  ${upperConjunction} ${words.noun()} ${words.verb()} ${words.noun() + rndmPunctuation}`;
         }
     }
     lengthIndicator.innerText = `Quote Sentences: ${sentences}`;
@@ -82,8 +78,7 @@ function complexQuote() {
 function simpleQuote() {
     let text = "";
     let quoteLength = (Math.floor(Math.random() * simpleWords.length));
-    for (let i = 0; i < quoteLength; i++)
-    {
+    for (let i = 0; i < quoteLength; i++) {
         // Gets as many words as the length of the quote
         let randomWord = `${simpleWords[Math.floor(Math.random() * simpleWords.length)]}`
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
@@ -104,7 +99,7 @@ function simpleQuote() {
 
 
 function getAuthor() {
-     let author = "-";
+    let author = "-";
     // grabs 2 names for the author from the name list
     for (let i = 0; i < 2; i++) {
         let randomName = names[Math.floor(Math.random() * names.length)];
