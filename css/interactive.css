@@ -8,6 +8,7 @@ body {
     height: 100vh;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 0;
     background-color: grey;
 }
@@ -16,9 +17,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80vw;
-    height: 15vh;
-    font-size: 7vw;
+    width: 75vw;
+    height: 10vh;
+    font-size: 2em;
     background-color: red;
     color: white;
     padding: 10px;
@@ -26,7 +27,7 @@ h1 {
 
 .quotesection {
     background-color: white;
-    width: clamp(250px, 40vw, 600px);
+    width: 280px;
     height: fit-content;
     border: 2px black solid;
     border-radius: 10px;
@@ -34,10 +35,10 @@ h1 {
 }
 
 button {
-    font-size: clamp(.5rem, 1rem, 1.5rem);
+    font-size: 1.5rem;
     margin-top: 10px;
-    height: clamp(25px, 10vh, 100px);
-    width: clamp(125px, 20vw, 350px);
+    height: 75px;
+    width: 250px;
     border-radius: 20px;
     filter: drop-shadow(30px 50px 30px 30px black);
     user-select: none;
@@ -60,6 +61,7 @@ button:hover {
     border: 2px black solid;
     border-radius: 3px;
     padding: 0 10px 0;
+    align-items: center;
     justify-content: space-between;
     position: relative;
 
@@ -83,4 +85,69 @@ button:hover {
 
 .complex {
     transform: translate(var(--unWidth), 0);
+}
+
+/* Media Queries */
+
+@media (height <=500px),
+(width <=330px) {
+    button {
+        height: 50px;
+        width: 180px;
+        font-size: 1.25rem;
+    }
+
+    .quotesection {
+        width: 200px;
+    }
+
+    .switch {
+        width: 100px;
+        height: 30px;
+        background-color: rgb(69, 73, 77);
+
+        & p {
+
+            font-size: 0.65rem;
+        }
+
+        & .slider {
+            content: "";
+            width: 50px;
+            height: 30px;
+            background-size: cover;
+            background-position: center;
+        }
+
+    }
+
+    .complex {
+        transform: translate(-70px, 0);
+    }
+}
+
+@media (width >=700px) {
+    h1 {
+        width: clamp(500px, 3em, 700px);
+        height: 10vh;
+        font-size: 2em;
+
+    }
+
+    .quotesection {
+        width: clamp(400px, 3em, 700px);
+    }
+}
+
+@media (width >=900px) {
+    h1 {
+        width: clamp(800px, 6em, 900px);
+        height: 10vh;
+        font-size: 3em;
+
+    }
+
+    .quotesection {
+        width: clamp(700px, 6em, 800px);
+    }
 }
