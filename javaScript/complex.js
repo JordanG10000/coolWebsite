@@ -46,6 +46,7 @@ generateBtn.addEventListener("click", () => {
 })
 
 const words = {
+    random() {return simpleWords[Math.floor(Math.random() * simpleWords.length)]},
     conjunction() { return conjunctions[Math.floor(Math.random() * conjunctions.length)] },
     noun() { return nouns[Math.floor(Math.random() * nouns.length)] },
     verb() { return verbs[Math.floor(Math.random() * verbs.length)] }
@@ -79,14 +80,12 @@ function simpleQuote() {
     let text = "";
     let quoteLength = (Math.floor(Math.random() * simpleWords.length));
     for (let i = 0; i < quoteLength; i++) {
-        // Gets as many words as the length of the quote
-        let randomWord = `${simpleWords[Math.floor(Math.random() * simpleWords.length)]}`
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
-            text += randomWord;
+            text += words.random();
         }
         else {
-            text += ` ${randomWord}`;
+            text += ` ${words.random()}`;
         }
     }
     lengthIndicator.innerText = `Quote Length: ${quoteLength}`;
