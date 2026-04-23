@@ -6,7 +6,11 @@ const trigger = document.querySelector(".switch");
 const slider = document.querySelector(".slider");
 let maxSentences = 5;
 
+// import {words as wordList} from 'javaScript\words\words.js';
 
+// for (let words in wordList) {
+//     console.log(words);
+// }
 // Random list of words and a random list of first and last names
 
 trigger.addEventListener("click", () => {
@@ -45,7 +49,7 @@ generateBtn.addEventListener("click", () => {
     getAuthor();
 })
 
-const words = {
+const rndm = {
     random() {return simpleWords[Math.floor(Math.random() * simpleWords.length)]},
     conjunction() { return conjunctions[Math.floor(Math.random() * conjunctions.length)] },
     noun() { return nouns[Math.floor(Math.random() * nouns.length)] },
@@ -58,16 +62,16 @@ function complexQuote() {
     let sentences = (Math.floor(Math.random() * maxSentences + 1));
     for (let i = 0; i < sentences; i++) {
         // Format: "Conjunction -> Noun -> Verb -> Noun"
-        let randomConjunction = words.conjunction();
+        let randomConjunction = rndm.conjunction();
         let rndmPunctuation = punctuation[Math.floor(Math.random() * punctuation.length)];
 
         let upperConjunction = randomConjunction.charAt(0).toUpperCase() + randomConjunction.slice(1);
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
-            text += `${upperConjunction} ${words.noun()} ${words.verb()} ${words.noun() + rndmPunctuation}`;
+            text += `${upperConjunction} ${rndm.noun()} ${rndm.verb()} ${rndm.noun() + rndmPunctuation}`;
         }
         else {
-            text += `  ${upperConjunction} ${words.noun()} ${words.verb()} ${words.noun() + rndmPunctuation}`;
+            text += `  ${upperConjunction} ${rndm.noun()} ${rndm.verb()} ${rndm.noun() + rndmPunctuation}`;
         }
     }
     lengthIndicator.innerText = `Quote Sentences: ${sentences}`;
@@ -82,10 +86,10 @@ function simpleQuote() {
     for (let i = 0; i < quoteLength; i++) {
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
-            text += words.random();
+            text += rndm.random();
         }
         else {
-            text += ` ${words.random()}`;
+            text += ` ${rndm.random()}`;
         }
     }
     lengthIndicator.innerText = `Quote Length: ${quoteLength}`;

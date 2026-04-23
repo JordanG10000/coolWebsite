@@ -1,41 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Interactive</title>
-        <link rel="stylesheet" href="css/interactive.css">
-        <link rel="stylesheet" href="css/button.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive</title>
+    <link rel="stylesheet" href="css/interactive.css">
+    <link rel="stylesheet" href="css/button.css">
+    <script src="javaScript/complex.js" defer></script>
 
-    </head>
+</head>
 
-    <body>
-        <nav id="backButton">
-            <a href="index.html">TAKE ME BACK</a>
-        </nav>
-        <h1>Random Quote Generator</h1>
-        <section class="quotesection">
-            <h2>Quote Length: 3</h2> <!-- EX.. Quote Length 12-->
-            <section class="textArea">
-                <q class="quote">Example quote text...</q> <!-- I am is the am in the-->
-                <p class="author">-Author</p> <!-- -John John-->
-            </section>
-            <section class="settings">
-                <div>
-                    
+<body>
+    <nav id="backButton">
+        <a href="index.html">TAKE ME BACK</a>
+    </nav>
+
+    <h1>Random Quote Generator</h1>
+    <section class="quotesection">
+
+        <h2>Quote Length: 3</h2> <!-- EX.. Quote Length 12-->
+
+        <section class="textArea">
+            <q class="quote">Example quote text...</q> <!-- I am is the am in the-->
+            <p class="author">-Author</p> <!-- -John John-->
+        </section>
+
+        <!-- Settings Menus -->
+        <section class="settings hide">
+            <span class="scaryBanner"></span>
+            <h2>SIMPLE - Words</h2>
+            <div class="range min">
+                <p>Min-</p>
+                <input type="number" name="minWord">
+            </div>
+            <div class="range max">
+                <p>Max-</p>
+                <input type="number" name="maxWord">
+            </div>
+
+            <h3>Settings</h3>
+        </section>
+
+        <section class="settings hide">
+            <span class="scaryBanner"></span>
+            <h2>COMPLEX - Sentences</h2>
+            <div class="range">
+                <p>Min-</p>
+                <input type="number" name="minSentence">
+            </div>
+            <div class="range">
+                <p>Max-</p>
+                <input type="number" name="maxSentence">
+            </div>
+
+            <section>
+                <div class="wordBank">
+                    <p>conjunction</p>
+                    <p>noun</p>
+                    <p>verb</p>
                 </div>
-                <h4>Settings</h4>
+                <p>Sentence Structure</p>
+                <div class="sentenceStruct">
+                    <p class="verb"></p>
+                </div>
+
+
             </section>
+
+            <h3>Settings</h3>
         </section>
-        <button class="generateBtn">Generate Quote</button>
-        <section class="switch">
-            <p>Simple</p>
-            <p>Complex</p>
-            <div class="slider"></div>
-        </section>
-        
-        <script src="javaScript/complex.js"></script>
-    </body>
+
+    </section>
+
+    <!-- Interactible Buttons -->
+    <button class="generateBtn">Generate Quote</button>
+    <section class="switch">
+        <p>Simple</p>
+        <p>Complex</p>
+        <div class="slider"></div>
+    </section>
+
+</body>
 
 </html>
