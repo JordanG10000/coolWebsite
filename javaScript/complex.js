@@ -5,6 +5,7 @@ const generateBtn = document.querySelector(".generateBtn");
 const trigger = document.querySelector(".switch");
 const slider = document.querySelector(".slider");
 let maxSentences = 5;
+let maxWords = 10;
 
 // import {words as wordList} from 'javaScript\words\words.js';
 
@@ -46,7 +47,7 @@ generateBtn.addEventListener("click", () => {
     else {
         simpleQuote();
     }
-    getAuthor();
+    getAuthor()
 })
 
 const rndm = {
@@ -82,7 +83,7 @@ function complexQuote() {
 
 function simpleQuote() {
     let text = "";
-    let quoteLength = (Math.floor(Math.random() * simpleWords.length));
+    let quoteLength = (Math.floor(Math.random() * maxWords + 1));
     for (let i = 0; i < quoteLength; i++) {
         // ensures there isnt a space at the start of the quote, otherwise adds spaces
         if (i == 0) {
